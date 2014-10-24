@@ -14,10 +14,11 @@
 //***********************************//
 //*************DEFINE****************//
 //***********************************//
-#define TAG_AFK_MANAGER_CSGO 		"[AIO AFK MANAGER] - "
-#define CHECK_ADMIN_IMMUNITY(%1) 	(C_admin_flag == 0 ? GetUserFlagBits(%1)!=0 : (GetUserFlagBits(%1) & C_admin_flag || GetUserFlagBits(%1) & ADMFLAG_ROOT))
-#define AFK_CHECK_INTERVAL_CSGO 	5.0
-#define AFK_THRESHOLD_CSGO 			30.0 //AFK_THRESHOLD_CSGO for amount of movement required to mark a player as AFK.
+#define TAG_AFK_MANAGER_CSGO 			"[AIO AFK MANAGER] - "
+#define PLUGIN_VERSION_AFK_MANAGER_CSGO "1.0.0"
+#define CHECK_ADMIN_IMMUNITY(%1) 		(C_admin_flag == 0 ? GetUserFlagBits(%1)!=0 : (GetUserFlagBits(%1) & C_admin_flag || GetUserFlagBits(%1) & ADMFLAG_ROOT))
+#define AFK_CHECK_INTERVAL_CSGO 		5.0
+#define AFK_THRESHOLD_CSGO 				30.0 //AFK_THRESHOLD_CSGO for amount of movement required to mark a player as AFK.
 
 //***********************************//
 //***********PARAMETERS**************//
@@ -70,7 +71,7 @@ new C_admin_flag;
 /***********************************************************/
 public OnPluginStartAfkManagerCsgo()
 {
-	CreateConVar("aio_afk_manager_version", PLUGIN_VERSION, "Version", CVARS);
+	CreateConVar("aio_afk_manager_version", PLUGIN_VERSION_AFK_MANAGER_CSGO, "Version", CVARS);
 	
 	cvar_active_afk_manager_csgo 					= CreateConVar("active_afk_manager_csgo",  				"0", 					"Enable/Disable AFK Manager", 											DEFAULT_FLAGS, 		true, 0.0, 		true, 1.0);
 	cvar_active_afk_manager_csgo_dev				= CreateConVar("active_afk_manager_csgo_dev", 			"0", 					"Enable/Disable AFK Manager Dev Mod", 									DEFAULT_FLAGS, 		true, 0.0, 		true, 1.0);
